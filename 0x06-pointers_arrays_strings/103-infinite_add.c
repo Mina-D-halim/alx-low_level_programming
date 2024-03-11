@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * infinite_add - add tow  strings.
+ * infinite_add - add 2 strings.
  * @n1: string1.
  * @n2: string2.
  * @r: buffer
@@ -10,21 +10,21 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
+  int a_len = 0, b_len = 0, carry = 0, a, b, sum, biggest;
 
-	int a_len = 0, b_len = 0, carry = 0, a, b, sum, biggest;
-	
-	while (n1[a_len] != '\0')
-		a_len++;
-	while (n2[b_len] != '\0')
+
+      while (n1[a_len] != '\0')
+       		a_len++;
+      while (n2[b_len] != '\0')
 		b_len++;
-	if (a_len > b_len)
+      if (a_len > b_len)
 		biggest = a_len;
-	else
+      else
 		biggest = b_len;
-	if ((biggest + 1) >= size_r)
+      if ((biggest + 1) >= size_r)
 		return (0);
 	r[biggest + 1] = '\0';
-	
+
 	while (biggest >= 0)
 	{
 		a = (n1[a_len - 1] - '0');
@@ -36,7 +36,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		else if (a_len > 0 && b_len < 0)
 			sum = a + carry;
 		else
-			sum = carry;
+                   sum = carry;
 		
 		if (sum > 9)
 		{
